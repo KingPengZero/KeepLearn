@@ -1,4 +1,4 @@
-# 长期以来，JavaScript语言的this对象一直是一个令人头痛的问题，在对象方法中使用this，必须非常小心。例如：
+### 长期以来，JavaScript语言的this对象一直是一个令人头痛的问题，在对象方法中使用this，必须非常小心。例如：
 ```
 class Animal {
     constructor(){
@@ -14,11 +14,11 @@ class Animal {
 var animal = new Animal()
 animal.says('hi')  //undefined says hi
 ```
-# 运行上面的代码会报错，这是因为setTimeout中的this指向的是全局对象
+### 运行上面的代码会报错，这是因为setTimeout中的this指向的是全局对象
 
-# 所以为了让它能够正确的运行，传统的解决方法有两种：
+### 所以为了让它能够正确的运行，传统的解决方法有两种：
 
-# 第一种是将this传给self,再用self来指代this
+### 第一种是将this传给self,再用self来指代this
 ```
 says(say){
        var self = this;
@@ -26,7 +26,7 @@ says(say){
            console.log(self.type + ' says ' + say)
        }, 1000)
 ```
-# 第二种方法是用bind(this),即
+### 第二种方法是用bind(this),即
 ```
 says(say){
        setTimeout(function(){
